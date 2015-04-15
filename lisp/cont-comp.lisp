@@ -35,7 +35,7 @@
 (xdefmacro eclipse:IN-PACKAGE (name)
   `(eval-when (:compile-toplevel :load-toplevel :execute)
      #+cmu (cl:in-package ,name)
-     (setq *package* (eclipse::pkg ,name))))
+     (setq *package* (eclipse::pkg ,(string name)))))
 
 
 (xdefmacro eclipse:SETF (&rest args &environment env)
